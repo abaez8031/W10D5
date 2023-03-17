@@ -1,5 +1,6 @@
 import react from "react";
 import {NavLink} from "react-router-dom";
+import './GalleryNavigation.css';
 
 function GalleryNavigation (props) {
   const {galleries} = props;

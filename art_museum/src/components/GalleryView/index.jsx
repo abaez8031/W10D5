@@ -1,10 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import ArtImageTile from "../ArtImageTile";
 
 function GalleryView(props) {
     const {galleryId} = useParams();
-    console.log(galleryId);
-    console.log(props.galleries);
+    // console.log(galleryId);
+    // console.log(props.galleries);
     const gallery = props.galleries.find((gallery) => {
         // console.log("galleryid: ", gallery.galleryid);
         // console.log("galleryId: ", galleryId);
@@ -12,6 +13,11 @@ function GalleryView(props) {
 
         
     });
+
+    const tiles = gallery.objects.images.map((image) => {
+        <ArtImageTile art={image} />
+    })
+
     console.log(gallery);
 
     return (
